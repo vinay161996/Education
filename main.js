@@ -22,6 +22,27 @@ faq.forEach(item => {
     })
 })
 
+// navmenu open and close 
+const navMenu = document.querySelector('.nav-menu');
+const navOpenBtn = document.querySelector('#open-menu');
+const navCloseBtn = document.querySelector('#close-menu');
 
+const operateNavMenu = (item) => {
+    if (item.id === "open-menu") {
+        navMenu.style.display = "flex"
+        navOpenBtn.style.display = 'none';
+        navCloseBtn.style.display = 'inline-block';
+    } else if (item.id === "close-menu") {
+        navMenu.style.display = "none"
+        navOpenBtn.style.display = 'inline-block';
+        navCloseBtn.style.display = 'none';
 
+    }
 
+};
+navOpenBtn.addEventListener('click', function () {
+    operateNavMenu(navOpenBtn);
+})
+navCloseBtn.addEventListener('click', function () {
+    operateNavMenu(navCloseBtn);
+})

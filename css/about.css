@@ -1,0 +1,168 @@
+/* achievements */
+
+.achievement-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.achievement-right>p {
+    margin: 1.6rem 0 2.5rem 0;
+}
+
+.achievement-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--color-bg1);
+    padding: 1.6rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.card:hover {
+    background: var(--color-bg2);
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.card-icon {
+    background: var(--color-danger);
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+}
+
+.card:nth-child(2) .card-icon {
+    background: var(--color-success);
+}
+
+.card:nth-child(3) .card-icon {
+    background: var(--color-warning);
+}
+
+.card p {
+    margin-top: 0.3rem;
+}
+
+/* team */
+
+.team {
+    background: var(--color-bg1);
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.team-mem {
+    position: relative;
+    padding: 2rem;
+    background: var(--color-bg2);
+    border: 1px solid transparent;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.team-mem:hover {
+    background: transparent;
+    border-color: var(--color-primary);
+}
+
+.team-mem:hover img {
+    filter: saturate(1);
+}
+
+.team-mem-img img {
+    filter: saturate(0);
+}
+
+.team-mem-info * {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.team-mem-info p {
+    color: var(--color-light);
+}
+
+.team-mem:hover .team-mem-social {
+    right: 0;
+}
+
+.team-mem-social {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    right: -50%;
+    background: var(--color-primary);
+    border-radius: 1rem 0 0 1rem;
+    transform: translateY(-50%);
+    box-shadow: -1rem 0 1rem rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.team-mem-social a {
+    padding: 0.5rem;
+}
+
+
+/* media querry for tablet */
+
+@media screen and (max-width:1024px) {
+
+    /* achievement */
+    .achievement-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .achievement-left {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* team */
+    .team-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .team-mem {
+        padding: 1rem;
+    }
+
+}
+
+
+/* media querry for mobile */
+
+@media screen and (max-width:620px) {
+    .achievement-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    /* team */
+    .team-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .team-mem {
+        padding: 0;
+    }
+
+    .team-mem p {
+        margin-bottom: 1rem;
+    }
+}
